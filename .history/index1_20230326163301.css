@@ -72,16 +72,14 @@ table {
   }
   
 
-  @media (max-width: 500px) {
-    .searchbar {
+  @media (max-width: 600px) {
+    .container1 .searchbar {
       display: flex;
-      flex-direction: column;
-      align-items: center;
     }
     
     .searchbar label {
       margin-bottom: 10px;
-    }
+    } 
     
     .searchbar input[type="search"] {
       width: 100%;

@@ -72,7 +72,7 @@ table {
   }
   
 
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     .searchbar {
       display: flex;
       flex-direction: column;
@@ -86,5 +86,6 @@ table {
     .searchbar input[type="search"] {
       width: 100%;
       max-width: 300px;
+      resize: both;
     }
   }

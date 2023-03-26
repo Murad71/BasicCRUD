@@ -72,7 +72,7 @@ table {
   }
   
 
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     .searchbar {
       display: flex;
       flex-direction: column;
