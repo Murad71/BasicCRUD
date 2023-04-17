@@ -9,20 +9,20 @@
   </head>
   <body>
     <div>
-      <form>
+      <form id="form1">
         <header>Submit Leave</header>
         <div class="container">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" />
           <br />
-          <label for="start date">Start Date:</label>
-          <input type="text" id="start date" name="start date" />
+          <label for="startdate">Start Date:</label>
+          <input type="text" id="startdate" name="startdate" />
           <br />
-          <label for="# of days"># Of Days:</label>
-          <input type="text" id="# of days" name="# of days" />
+          <label for="days"># Of Days:</label>
+          <input type="text" id="days" name="days" />
           <br />
-          <label for="type of leave">Type:</label>
-          <select id="type of leave" name="type of leave" required>
+          <label for="leaves">Type:</label>
+          <select id="leave" name="leaves" required>
             <option value="Sick leave">Sick Leave</option>
             <option value="Early leave">Early Leave</option>
             <option value="Vacation leave">Vacation Leave</option>
@@ -32,7 +32,7 @@
           <label for="photo">Photo:</label>
           <input type="file" id="photo" name="photo" />
           <div class="button-container">
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" id="submitButton"/>
             <input type="reset" value="Cancel" class="cancel" />
           </div>
         </div>
@@ -42,5 +42,6 @@
         <!--Added the hyperlink here-->
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
