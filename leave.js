@@ -13,7 +13,7 @@ storage.forEach(obj =>{
                     <td>${obj.days}</td>
                     <td>${obj.leaves}</td>
                     <td><img id="img" src=${obj.photo} alt=""></td>
-                    <td><a href="index.html" id="edit">Edit</a> <input type='button' value= 'Reject' name=${obj.id} class="reject"/></td>`;
+                    <td><a href="index.html" class="edit">Edit</a> <input type='button' value= 'Reject' name=${obj.id} class="reject"/></td>`;
                     
     table.appendChild(row);
 });
@@ -24,28 +24,22 @@ for(var i=0; i < removeListItems.length; i++)
     var button= removeListItems[i];
     button.addEventListener('click', function(event){
         //button we clicked on
-        var buttonClicked= event.target;
-        var row= buttonClicked.closest('tr');
-        var rowIndex= row.rowIndex;
-        storage.splice(rowIndex - 1, 1);
-        localStorage.setItem('store', JSON.stringify(storage));
-        buttonClicked.parentElement.parentElement.remove();
+        let alert= confirm("Are you sure you want to reject the request?");
+        if(alert)
+        {
+            var buttonClicked= event.target;
+            var row= buttonClicked.closest('tr');
+            var rowIndex= row.rowIndex;
+            storage.splice(rowIndex - 1, 1);
+            localStorage.setItem('store', JSON.stringify(storage));
+            buttonClicked.parentElement.parentElement.remove();
+        }
+        else return; 
     })
 }
 
 
-///REFRESHING rIndex by clicking HOME button
-const homeButton=document.getElementsByClassName('home')[0];
-homeButton.addEventListener('click',()=>{
-    localStorage.setItem('rIndex',JSON.stringify(''));
-})
 
 
-
-///REFRESHING rIndex by clicking HOME button
-const submitLeave=document.getElementById("button1");
-submitLeave.addEventListener('click',()=>{
-    localStorage.setItem('rIndex',JSON.stringify(''));
-})
 
 
