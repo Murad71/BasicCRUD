@@ -1,6 +1,7 @@
 let storage=JSON.parse(localStorage.getItem('store')) || [];
 let index=JSON.parse(localStorage.getItem('rIndex')) || null;
 const submitButtonCatch=document.getElementById("submitButton");
+const img= new Image();
 
 //after clicking the submit button
 submitButtonCatch.addEventListener("click",() =>{
@@ -11,7 +12,14 @@ submitButtonCatch.addEventListener("click",() =>{
     object["id"]= Date.now(); 
     for(let i=0;i<form.length;i++)
     {
-        object[form.elements[i].name]=form.elements[i].value;
+        if(form.elements[i].name=="photo")
+        {
+            object[form.elements[i].name]= img.src;
+        }
+        else
+        {
+            object[form.elements[i].name]=form.elements[i].value;
+        } 
         if(form.elements[i].value=='') 
         {
             flag=false;
@@ -40,9 +48,28 @@ submitButtonCatch.addEventListener("click",() =>{
         localStorage.setItem('store',JSON.stringify(storage));
         localStorage.setItem('rIndex',JSON.stringify(index));
         form.reset();
-        console.log(storage);
     }
 });
+
+
+//base64 conversion
+const fileEl= document.getElementById('photo');
+fileEl.addEventListener('change', () =>{
+
+    const fr= new FileReader();
+    fr.readAsDataURL(fileEl.files[0]);
+
+    fr.addEventListener('load', ()=>{
+        
+        const url= fr.result;
+        img.src= url;
+
+    });
+
+});
+
+
+console.log(storage);
 
 
 
