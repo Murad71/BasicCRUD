@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="index1.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container1">
+        <div class="searchbar">
+        <form>
+          <label for="search">Search:</label> <!--Added the search bar here-->
+          <input type="search" id="search" name="search" />
+          <button>Submit</button>
+        </form>
+      </div>
+      <table class="table1">
+        <thead class="thead1">
+          <tr>
+            <th>Name</th>
+            <th>Start Date</th>
+            <th>#of Days</th>
+            <th>Type</th>
+            <th>Photo</th>
+            <th>Options</th>
+          </tr>
+        </thead>
+        <tbody class="tbody1">
+          <tr>
+            <td>Sakib</td>
+            <td>16-08-2020</td>
+            <td>1</td>
+            <td>Sick leave</td>
+            <td><img src="sakib.jpg" alt="Sakib's photo" /></td>
+            <td><a href="index.html" id="edit">Edit</a> <input type='button' value= 'Reject' name="dummy1" class="reject"/></td>
+          </tr>
+          <tr>
+            <td>Mustafiz</td>
+            <td>20-02-2021</td>
+            <td>3</td>
+            <td>Other</td>
+            <td><img src="mustafiz.jpg" alt="Mustafiz's photo" /></td>
+            <td><a href="index.html" id="edit">Edit</a> <input type='button' value= 'Reject' name="dummy2" class="reject"/></td>
+          </tr>
+        </tbody>
+      </table>
+      <input type="submit" value="Submit A Leave Request" />
+    </div>
+    
+    <script src="leave.js"></script>
+  </body>
+</html>

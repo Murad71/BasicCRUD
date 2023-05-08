@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: small;
+}
+ 
+.flex1
+{
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+} 
+
+.container {
+  background-color: white;
+  /* padding: 5px 20px 15px 20px; */
+  border: 2px solid white;
+  flex-direction: column; 
+  margin-bottom: 15px;
+  width: 100%;
+  display: flex;
+  /* display: flex; */
+}
+
+header {
+  font-size: 25px;
+  text-align: center;
+}
+
+input[type="text"],
+input[type="file"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 6px;
+  border: 1px solid;
+  border-radius: 5px;
+  margin-left: 10px;
+  background-color: #cabbe9;
+}
+
+.button-container {
+  margin-left: 380px;
+  /* text-align: right; */
+}
+
+input[type="submit"],
+input[type="reset"] {
+  font-size: 15px;
+  border: 1px solid;
+  margin: 5px;
+  padding: 4px;
+  background-color: greenyellow;
+  border-radius: 4px;
+}
+
+input[type="reset"].cancel {
+  background-color: red;
+}
+
+.anchorContainer {
+  margin-left: 450px;
+} 
+
+a {
+  display: inline-block;
+  background: #69c;
+  color: #fff;
+  padding: 5px 10px;
+}
+
+

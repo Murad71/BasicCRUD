@@ -1,0 +1,38 @@
+const table = document.getElementsByClassName("tbody1")[0];
+let storage=JSON.parse(localStorage.getItem('store')) || [];
+
+
+//displaying the data
+storage.forEach(function(obj) {
+    let row=document.createElement('tr');
+    row.innerHTML = `<td>${obj.name}</td>
+                    <td>${obj.startdate}</td>
+                    <td>${obj.days}</td>
+                    <td>${obj.leaves}</td>
+                    <td><img id="img" src=${obj.photo} alt=""></td>
+                    <td><a href="index.html" id="edit">Edit</a> <input type='button' value= 'Reject' name=${obj.id} id="reject"/></td>`;
+                    
+    table.appendChild(row);
+    // //EDIT BUTTON
+    // const editButton=row.querySelector("#edit");
+    // editButton.addEventListener('click',(event)=>{
+    //     let rowIndex= event.target.parentElement.parentElement.rowIndex;
+    //     localStorage.setItem('rIndex',JSON.stringify(rowIndex));
+    // })
+
+    // //REJECT BUTTON
+    // const rejectButton=row.querySelector("#reject");
+    // rejectButton.addEventListener('click',(event)=>{
+    //     let signal=confirm("Are you sure?");
+    //     if(!signal) return;
+    //     const rowIndex=event.target.parentElement.parentElement.rowIndex;
+    //     event.target.parentElement.parentElement.remove();
+    //     storage.splice(rowIndex-1,1);
+    //     localStorage.setItem('store',JSON.stringify(storage));
+    //     console.log(storage);
+    // })
+});
+
+
+
+

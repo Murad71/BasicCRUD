@@ -1,0 +1,95 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: lightgreen;
+  }
+  
+  .container1 {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: auto;
+    height: 30vh;
+  }
+  
+  .table1 .tbody1 #img{
+    width: 60px;
+    height: 60px;
+  }
+
+  td a.edit {
+    border: 1px solid black;
+    background-color: lightblue;
+    padding: 2px 6px;
+    color: white;
+    text-decoration: none;
+    margin: 3px;
+  }
+  
+  td .reject {
+    border: 1px solid black;
+    background-color: red;
+    padding: 4px 6px;
+    color: white;
+    text-decoration: none;
+    margin-right: 3px;
+  }
+  
+  table .thead1 th {
+    border-right: 1px solid white;
+  }
+  
+  .table1 tr {
+    border-bottom: 1px solid white; /* Add horizontal line after each row */
+  }
+  
+  .tbody1 td {
+    height: 50px;
+    background-color: grey;
+    color: white;
+    font-weight: bold;
+    border-right: 1px solid white;
+    text-align: center;
+  }
+  
+  input[type="submit"] {
+    font-size: 12px;
+    color: white;
+    border: 1px solid;
+    padding: 7px;
+    background-color: purple;
+    border-radius: 4px;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    display: block;
+  }
+  
+  .container1 .searchbar {
+    border: 2px solid black;
+    background-color: lightblue;
+    padding: 2px 6px;
+    color: white;
+    text-decoration: none;
+    margin: 3px 3px 3px 0;
+  }
+  
+
+  @media (max-width: 500px) {
+    .searchbar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .searchbar label {
+      margin-bottom: 10px;
+    }
+    
+    .searchbar input[type="search"] {
+      width: 100%;
+      max-width: 300px;
+    }
+  }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Leave Request</title>
+  </head>
+  <body>
+    <div class="flex1">
+      <form id="form1">
+        <header>Submit Leave</header>
+        <div class="container">
+          <label for="name"  style="display: inline-block;">Name:</label>
+          <input type="text" id="name" name="name" />
+          <br />
+          <label for="startdate">Start Date:</label>
+          <input type="text" id="startdate" name="startdate" />
+          <br />
+          <label for="days"># Of Days:</label>
+          <input type="text" id="days" name="days" />
+          <br />
+          <label for="leaves">Type:</label>
+          <select id="leave" name="leaves" required>
+            <option value="Sick leave">Sick Leave</option>
+            <option value="Early leave">Early Leave</option>
+            <option value="Vacation leave">Vacation Leave</option>
+            <option value="Other">Other</option>
+          </select>
+          <br />
+          <label for="photo">Photo:</label>
+          <input type="file" id="photo" name="photo"/>
+          <div class="button-container">
+            <input type="submit" value="Submit" id="submitButton"/>
+            <input type="reset" value="Cancel" class="cancel" />
+          </div>
+        </div>
+      </form>
+      <div class="anchorContainer">
+        <a href="index1.html"> Leave page</a>
+        <!--Added the hyperlink here-->
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
