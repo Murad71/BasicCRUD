@@ -3,6 +3,77 @@ let index=JSON.parse(localStorage.getItem('rIndex')) || null;
 const submitButtonCatch=document.getElementById("submitButton");
 const img= new Image();
 
+//Adding date format
+flatpickr("#startdate", {
+    dateFormat: "d/m/Y",
+    minDate: "today"
+});
+
+//Form validation
+let nameField = false;
+let noOfDaysField= false;
+
+
+const validationCheck = () => {
+  if (nameField && noOfDaysField) {
+    submitButtonCatch.disabled = false;
+  } else {
+    submitButtonCatch.disabled = true;
+  }
+};
+
+
+//name validation
+const nameValidation = (event) => {
+    let str = event.target.value;
+    let temp = /^[a-zA-Z ]{2,30}$/;
+    let flag= temp.test(str);
+   
+    if (str=='' || !flag) {
+      console.log('name not ok!');  
+      nameField = false;
+      event.target.style.border='2px solid red';
+      event.target.placeholder="Enter a valid name";
+      validationCheck();  
+    } 
+    else {
+      console.log('name is ok!');  
+      nameField = true;
+      event.target.style.border='3px solid green';
+      validationCheck();
+    }
+};
+
+// noOfDays validation
+const daysValidation = (event) => {
+    let limit = event.target.value;
+    if (limit < 1 || limit > 7) {
+      noOfDaysField = false;  
+      event.target.style.border='2px solid red';
+      event.target.placeholder="Range should be in between 1 and 7";
+      validationCheck();
+    } else {
+        noOfDaysField = true;
+        event.target.style.border='3px solid green';
+        validationCheck();
+    }
+};
+
+
+
+const fullName = document.getElementById("name");
+fullName.addEventListener("keyup", (event) => {
+  nameValidation(event);
+});
+
+const daysLeave = document.getElementById("days");
+daysLeave.addEventListener("keyup", (event) => {
+    daysValidation(event);
+});
+
+
+
+
 //after clicking the submit button
 submitButtonCatch.addEventListener("click",() =>{
     const form=document.getElementById("form1");
@@ -15,6 +86,7 @@ submitButtonCatch.addEventListener("click",() =>{
         if(form.elements[i].name=="photo")
         {
             object[form.elements[i].name]= img.src;
+
         }
         else
         {
@@ -69,57 +141,11 @@ fileEl.addEventListener('change', () =>{
 });
 
 
-console.log(storage);
+document.getElementById('')
 
 
 
-// let submitButtonClicked=document.getElementById("submitButton");
-// let indx=0;
-// let flag= true;
-// let obj={};
-
-// submitButtonClicked.addEventListener('click',() =>{
-    
-//     const form= document.getElementById('form1');
-//     obj["id"]= indx;
-//     indx++;
-//     for(let i=0; i<form.length; i++)
-//     {
-//         obj[form.elements[i].name]=form.elements[i].value;
-//         if(form.elements[i].value=='') 
-//         {
-//             flag=false;
-//             alert("WARNING: Fill all the given Input correctly.");
-//             break;
-//         }
-//         if(form.elements[i].name=="days" && (form.elements[i].value>7 || form.elements[i].value<1)) 
-//         {
-//             flag=false;
-//             alert("WARNING: Enter a valid number for vacation");
-//             break;
-//         }
-//     }
-
-//     if(flag)
-//     {
-//         alert("Data entered successfully!");
-//         insertData();
-//     }
-
-// });
+// console.log(storage);
 
 
-// function intertData()
-// {
-//     const table = document.getElementsByClassName("tbody1")[0];
-//           var row=document.createElement('tr');
-//            row.innerHTML = `<td>${obj.name}</td>
-//                 <td>${obj.startdate}</td>
-//                 <td>${obj.days}</td>
-//                 <td>${obj.leaves}</td>
-//                 <td><img id="img" src=${obj.photo} alt=""></td>
-//                 <td><a href="index.html" id="edit">Edit</a> <input type='button' value= 'Reject' name=${obj.id} id="reject"/></td>`;
-//             table.appendChild(row);
-// }
-    
-        
+
